@@ -4,9 +4,21 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Log\Log;
 use Cake\I18n\FrozenTime;
+use App\Model\Table\PatientsTable;
+use App\Model\Table\DoctorsTable;
 
 class AppointmentsController extends AppController
 {
+    /**
+     * @var \App\Model\Table\PatientsTable
+     */
+    public ?PatientsTable $Patients = null;
+
+    /**
+     * @var \App\Model\Table\DoctorsTable
+     */
+    public ?DoctorsTable $Doctors = null;
+
     public function initialize(): void
     {
         parent::initialize();
