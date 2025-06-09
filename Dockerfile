@@ -1,5 +1,21 @@
 FROM php:8.1-apache
 
+# Define build arguments for database connection
+ARG MYSQLHOST
+ARG MYSQLPORT
+ARG MYSQLUSER
+ARG MYSQLPASSWORD
+ARG MYSQLDATABASE
+ARG DATABASE_URL
+
+# Set environment variables using build arguments
+ENV MYSQLHOST=${MYSQLHOST:-mysql.railway.internal} \
+    MYSQLPORT=${MYSQLPORT:-3306} \
+    MYSQLUSER=${MYSQLUSER:-root} \
+    MYSQLPASSWORD=${MYSQLPASSWORD} \
+    MYSQLDATABASE=${MYSQLDATABASE:-railway} \
+    DATABASE_URL=${DATABASE_URL}
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
