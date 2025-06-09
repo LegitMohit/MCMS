@@ -46,8 +46,8 @@
         </button>
         <div class="top-nav-links">
             <?php if (isset($user) && $user) : ?>
-                <span class="welcome-text">Hello, <?= ucfirst(h($user->userName)) ?> (<?= ucfirst(h($user->role)) ?>)</span>
-                <?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']) ?>
+                <span class="welcome-text">Hello <?= ucfirst(h($user->userName ?? '')) ?> (<?= ucfirst(h($user->role ?? '')) ?>)</span>
+                <?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link'] ?? null) ?>
             <?php else : ?>
                 <?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']) ?>
                 <?= $this->Html->link('Signup', ['controller' => 'Users', 'action' => 'signup'], ['class' => 'nav-link']) ?>
