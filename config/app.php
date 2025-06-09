@@ -188,7 +188,9 @@ return [
         'skipLog' => [],
         'log' => true,
         'trace' => true,
-        'ignoredDeprecationPaths' => [],
+        'ignoredDeprecationPaths' => [
+            'vendor/cakephp/authentication/src/Identifier/Resolver/OrmResolver.php'
+        ],
     ],
 
     /*
