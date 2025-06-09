@@ -10,6 +10,7 @@ class HomeController extends AppController
         parent::beforeFilter($event);
         // Allow index action to be accessed without authentication
         $this->Authentication->addUnauthenticatedActions(['index']);
+        
     }
 
     public function index()
