@@ -300,7 +300,7 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
-            'url' => env('mysql://root:YpRaospFCnkhktcfEEsKjvulDrJvTohq@mysql.railway.internal:3306/railway'),
+            'url' => 'mysql://root:YpRaospFCnkhktcfEEsKjvulDrJvTohq@mysql.railway.internal:3306/railway',
             // 'host' =>   env('MYSQLHOST', 'localhost')   ,
             // 'port' => env('MYSQLPORT', 3306),
             // 'username' => env('MYSQLUSER', 'root'),
