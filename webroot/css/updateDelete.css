@@ -1,0 +1,25 @@
+.actions {
+    white-space: nowrap;
+}
+.button {
+    border: none;
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.update-btn {
+    background-color: #4CAF50;
+}
+.update-btn:hover {
+    background-color: #45a049;
+}
+.delete-btn {
+    background-color: #f44336;
+}
+.delete-btn:hover {
+    background-color: #da190b;
+}
