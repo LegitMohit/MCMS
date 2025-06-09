@@ -309,7 +309,14 @@ return [
             'cacheMetadata' => true,
             'quoteIdentifiers' => true,
             'log' => true,
-            'url' => env('MYSQL_URL', null),
+            // Use either DATABASE_URL or individual credentials
+            'url' => env('DATABASE_URL', env('MYSQL_URL', null)),
+            // Add SSL/TLS configuration for Railway.app
+            'flags' => [
+                // Enable SSL if required by Railway.app
+                // \PDO::MYSQL_ATTR_SSL_CA => true,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
+            ],
         ],
 
         /*
