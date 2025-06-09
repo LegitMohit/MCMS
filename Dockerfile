@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip \
-    libicu-dev
+    libicu-dev \
+    apache2 \
+    apache2-utils
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -39,6 +41,12 @@ COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.con
 # Enable Apache modules
 RUN a2enmod rewrite
 
+# Make sure apache is installed and configured
+RUN apt-get update && apt-get install -y apache2 \
+    && a2enmod rewrite \
+    && service apache2 start
+
 EXPOSE 80
 
-CMD ["apache2-ctl", "-D", "FOREGROUND"] 
+# Use the apache2-foreground script provided by the base image
+CMD ["apache2-foreground"] 
