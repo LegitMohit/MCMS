@@ -24,7 +24,7 @@
                 <td><?= $appointment->appointment_id ?></td>
                 <td><?= $appointment->has('patient') ? h($appointment->patient->first_name . ' ' . $appointment->patient->last_name) : h($appointment->Patient_id) ?></td>
                 <td><?= $appointment->has('doctor') ? h($appointment->doctor->first_name . ' ' . $appointment->doctor->last_name . ' (' . $appointment->doctor->specialization . ')') : h($appointment->doctor_id) ?></td>
-                <td><?= $appointment->appointment_date ? $appointment->appointment_date->format('Y-m-d h:i A') : '' ?></td>
+                <td><?= $appointment->appointment_date ? $appointment->appointment_date->i18nFormat('MMM dd, yyyy hh:mm:ss ', 'Asia/Kolkata') : '' ?></td>
                 <td><?= h($appointment->status) ?></td>
                 <td><?= $appointment->notes ?></td>
                 <td><?= $appointment->created->i18nFormat('MMM dd, yyyy hh:mm:ss ', 'Asia/Kolkata') ?></td>
