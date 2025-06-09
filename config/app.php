@@ -299,24 +299,23 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => env('MYSQLHOST', 'mysql.railway.internal'),
-            'port' => env('MYSQLPORT', '3306'),
-            'username' => env('MYSQLUSER', 'root'),
-            'password' => env('MYSQLPASSWORD', 'YpRaospFCnkhktcfEEsKjvulDrJvTohq'),
-            'database' => env('MYSQLDATABASE', 'railway'),
+            'host' => 'mysql.railway.internal',
+            'port' => '3306',
+            'username' => 'root', 
+            'password' => 'YpRaospFCnkhktcfEEsKjvulDrJvTohq',
+            'database' => 'railway',
             'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => true,
             'log' => true,
-            'url' => env('DATABASE_URL', null),
+            // Use either DATABASE_URL or individual credentials
+            'url' => env('DATABASE_URL', env('MYSQL_URL', null)),
+            // Add SSL/TLS configuration for Railway.app
             'flags' => [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_EMULATE_PREPARES => false,
-                // Add this if you're having SSL/TLS issues with Railway.app
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-                PDO::ATTR_PERSISTENT => false
+                // Enable SSL if required by Railway.app
+                // \PDO::MYSQL_ATTR_SSL_CA => true,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
             ],
         ],
 
