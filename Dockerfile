@@ -49,7 +49,17 @@ RUN apt-get update && apt-get install -y apache2 \
     && a2enmod rewrite \
     && service apache2 start
 
+# Create and set permissions for the environment file
+RUN touch /var/www/.env && \
+    chown www-data:www-data /var/www/.env && \
+    chmod 600 /var/www/.env
+
+# Script to update environment variables
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 80
 
-# Use the apache2-foreground script provided by the base image
+# Use custom entrypoint script
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"] 
