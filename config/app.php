@@ -190,8 +190,7 @@ return [
         'trace' => true,
         'ignoredDeprecationPaths' => [
             'vendor/cakephp/authentication/src/Identifier/Resolver/OrmResolver.php',
-            'vendor/cakephp/cakephp/src/Controller/ComponentRegistry.php',
-            'vendor/cakephp/authentication/src/Identity.php'
+            'vendor/cakephp/cakephp/src/Controller/ComponentRegistry.php'
         ],
     ],
 

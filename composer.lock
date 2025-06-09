@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c80ab06bbbd7ec47566f7cc60d3a9104",
+    "content-hash": "6e5777ff5af862df94f750b4d53e4cb1",
     "packages": [
         {
             "name": "cakephp/authentication",
-            "version": "2.4.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/authentication.git",
-                "reference": "048648d2e1daf73eed789404663aefee6747359e"
+                "reference": "62f63d0c625766b93b03d2e2e275078388ee39e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/authentication/zipball/048648d2e1daf73eed789404663aefee6747359e",
-                "reference": "048648d2e1daf73eed789404663aefee6747359e",
+                "url": "https://api.github.com/repos/cakephp/authentication/zipball/62f63d0c625766b93b03d2e2e275078388ee39e7",
+                "reference": "62f63d0c625766b93b03d2e2e275078388ee39e7",
                 "shasum": ""
             },
             "require": {
-                "cakephp/core": "^4.0",
+                "cakephp/http": "^4.5",
                 "laminas/laminas-diactoros": "^2.2.2",
                 "psr/http-client": "^1.0",
                 "psr/http-message": "^1.0",
@@ -29,9 +29,9 @@
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
-                "cakephp/cakephp": "^4.0",
+                "cakephp/cakephp": "^4.5",
                 "cakephp/cakephp-codesniffer": "^4.0",
-                "firebase/php-jwt": "^5.0",
+                "firebase/php-jwt": "^6.2",
                 "phpunit/phpunit": "^8.5 || ^9.3"
             },
             "suggest": {
@@ -72,7 +72,7 @@
                 "issues": "https://github.com/cakephp/authentication/issues",
                 "source": "https://github.com/cakephp/authentication"
             },
-            "time": "2020-12-29T23:33:37+00:00"
+            "time": "2024-10-18T13:15:59+00:00"
         },
         {
             "name": "cakephp/cakephp",
