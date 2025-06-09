@@ -87,4 +87,21 @@ class DoctorsController extends AppController
         }
         $this->set(compact('doctor'));
     }
+    public function view($id = null)
+    {
+        $this->RequestHandler->renderAs($this, 'json');
+        
+        try {
+            $doctor = $this->Doctors->get($id);
+            $this->set('doctor', $doctor);
+            $this->viewBuilder()->setOption('serialize', ['doctor']);
+        } catch (\Cake\Datasource\Exception\RecordNotFoundException $e) {
+            $this->response = $this->response->withStatus(404);
+            $this->set('error', [
+                'message' => 'Doctor not found',
+                'code' => 404
+            ]);
+            $this->viewBuilder()->setOption('serialize', ['error']);
+        }
+    }
 }

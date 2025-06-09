@@ -190,4 +190,21 @@ class AppointmentsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
     }
+    public function view($id = null)
+    {
+        $this->RequestHandler->renderAs($this, 'json');
+        
+        try {
+            $appointment = $this->Appointments->get($id);
+            $this->set('appointment', $appointment);
+            $this->viewBuilder()->setOption('serialize', ['appointment']);
+        } catch (\Cake\Datasource\Exception\RecordNotFoundException $e) {
+            $this->response = $this->response->withStatus(404);
+            $this->set('error', [
+                'message' => 'Appointment not found',
+                'code' => 404
+            ]);
+            $this->viewBuilder()->setOption('serialize', ['error']);
+        }
+    }
 }

@@ -135,7 +135,11 @@ return function (RouteBuilder $routes): void {
 
         $builder->connect('/doctors', ['controller' => 'Doctors', 'action' => 'doctorApi']);
 
+        $builder->connect('/doctors/{id}', ['controller' => 'Doctors', 'action' => 'view'], ['pass' => ['id']]);
+
         $builder->connect('/appointments', ['controller' => 'Appointments', 'action' => 'appointmentApi']);
+
+        $builder->connect('/appointments/{id}', ['controller' => 'Appointments', 'action' => 'view'], ['pass' => ['id']]);
 
         // Connect /api/user (POST) to UsersController::addUser
         // $builder->connect('/user', ['controller' => 'Users', 'action' => 'addUser'], ['_method' => 'POST']);
