@@ -51,12 +51,18 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
 
-        // Check if user is logged in and share with all views
-        $result = $this->Authentication->getResult();
-        if ($result->isValid()) {
-            $user = $this->Authentication->getIdentity();
-            $this->set('user', $user);
+        // Only check authentication if we're not in an unauthenticated action
+        $action = $this->request->getParam('action');
+        if (!in_array($action, ['login', 'signup'])) {
+            $result = $this->Authentication->getResult();
+            if ($result && $result->isValid()) {
+                $user = $this->Authentication->getIdentity();
+                $this->set('user', $user);
+            } else {
+                $this->set('user', null);
+            }
         } else {
+            // For login and signup pages, explicitly set user to null
             $this->set('user', null);
         }
     }
