@@ -41,6 +41,9 @@ COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.con
 # Enable Apache modules
 RUN a2enmod rewrite
 
+# Set ServerName globally
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Make sure apache is installed and configured
 RUN apt-get update && apt-get install -y apache2 \
     && a2enmod rewrite \
