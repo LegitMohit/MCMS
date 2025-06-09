@@ -5,6 +5,7 @@ use Cake\Database\Connection;
 use Cake\Database\Driver\Mysql;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
+use PDO;    
 
 return [
     /*
@@ -299,11 +300,11 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => env('MYSQLHOST', 'localhost'),
+            'host' => env('MYSQLHOST', 'mysql.railway.internal'),
             'port' => env('MYSQLPORT', '3306'),
-            'username' => env('MYSQLUSER', 'root'),
-            'password' => env('MYSQLPASSWORD', ''),
-            'database' => env('MYSQLDATABASE', 'medical_clinic_db'),
+            'username' => env('MYSQLUSER', 'root'), 
+            'password' => env('MYSQLPASSWORD', 'YpRaospFCnkhktcfEEsKjvulDrJvTohq'),
+            'database' => env('MYSQLDATABASE', 'railway'),
             'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
