@@ -300,12 +300,12 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
-            'url' => 'mysql://root:YpRaospFCnkhktcfEEsKjvulDrJvTohq@mysql.railway.internal:3306/railway',
             // 'host' =>   env('MYSQLHOST', 'localhost')   ,
             // 'port' => env('MYSQLPORT', 3306),
             // 'username' => env('MYSQLUSER', 'root'),
             // 'password' => env('MYSQLPASSWORD', ''),
             // 'database' => env('MYSQLDATABASE', 'medical_clinic_db'),
+            'url' => env('MYSQL_URL', null),
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */
