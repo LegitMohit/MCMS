@@ -298,7 +298,7 @@ return [
         'default' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
-            'persistent' => false,
+            'persistent' => true,
             'host' => env('MYSQLHOST', 'mysql.railway.internal'),
             'port' => env('MYSQLPORT', '3306'),
             'username' => env('MYSQLUSER', 'root'), 
