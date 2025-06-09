@@ -299,18 +299,13 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => 'mysql.railway.internal',
-            'port' => '3306',
-            'username' => 'root', 
-            'password' => 'YpRaospFCnkhktcfEEsKjvulDrJvTohq',
-            'database' => 'railway',
             'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => true,
             'log' => true,
             // Use either DATABASE_URL or individual credentials
-            'url' => env('DATABASE_URL', env('MYSQL_URL', null)),
+            'url' => env('MYSQL_URL', null),
             // Add SSL/TLS configuration for Railway.app
             'flags' => [
                 // Enable SSL if required by Railway.app
