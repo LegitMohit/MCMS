@@ -225,7 +225,7 @@ th {
 
 /* Footer Styles */
 .footer {
-    background-color: #f4f5f6;
+    /* background-color: #f4f5f6; */
     margin-top: 4rem;
 }
 
@@ -275,7 +275,7 @@ th {
 .hero {
     text-align: center;
     padding: 4rem 0;
-    background-color: #f4f5f6;
+    /* background-color: #f4f5f6; */
     margin-bottom: 4rem;
     border-radius: 0.4rem;
 }
@@ -320,7 +320,7 @@ th {
 }
 
 .info-section {
-    background-color: #f4f5f6;
+    /* background-color: #f4f5f6; */
     padding: 4rem 0;
     border-radius: 0.4rem;
 }
