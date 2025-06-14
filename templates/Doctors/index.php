@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="/css/updateDelete.css">
 <h1>Doctors</h1>
 <?= ucfirst($this->Identity->get('userName')) ?>
-<h3><?= $this->Html->link('Add Doctor', ['action' => 'add_doctors']) ?></h3>
+<div class="search-container">
+    <h4><?= $this->Html->link('Add Doctor', ['action' => 'add_doctors']) ?></h4>
+    <input type="text" id="searchInput" placeholder="Search doctors..." class="search-input" style="width: 50%;">
+</div>
 <table>
     <thead>
         <tr>
@@ -39,4 +42,4 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-</table>
+<script src="/js/searchBar.js"></script>

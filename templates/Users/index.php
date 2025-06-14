@@ -1,6 +1,6 @@
 <h1>Users</h1>
 <?= ucfirst($this->Identity->get('userName')) ?>
-<h3><?= $this->Html->link('Add User', ['action' => 'signup']) ?></h3>
+<h4><?= $this->Html->link('Add User', ['action' => 'signup']) ?></h4>
 <table>
     <thead>
         <tr>

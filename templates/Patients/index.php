@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="/css/updateDelete.css">
 <h1>Patients</h1>
 <?= ucfirst($this->Identity->get('userName')) ?>
-<h3><?= $this->Html->link('Add Patient', ['action' => 'add_Patients']) ?></h3>
+<div class="search-container">
+    <h4><?= $this->Html->link('Add Patient', ['action' => 'add_Patients']) ?></h4>
+    <input type="text" id="searchInput" placeholder="Search patients..." class="search-input" style="width: 50%;">
+</div>
+
 <div class="table-scroll-indicator">
     <table>
         <thead>
@@ -43,3 +47,5 @@
         </tbody>
     </table>
 </div>
+
+<script src="/js/searchBar.js"></script>
