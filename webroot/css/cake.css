@@ -266,14 +266,14 @@ th {
     margin: 0;
     color: #9b9b9b;
 }
+/* added here */
 .search-container {
     margin: 10px 0;
-    text-align: right;
+    text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .search-input {
     font-size: 14px;
 }
