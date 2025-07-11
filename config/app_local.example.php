@@ -46,7 +46,7 @@ return [
 
             'username' => env('MYSQL_USER', 'my_app'),
             'password' => env('MYSQL_PASSWORD', 'secret'),
-
+            'port' => env('MYSQL_PORT', '3306'),
             'database' => env('MYSQL_DATABASE', 'my_app'),
             /*
              * If not using the default 'public' schema with the PostgreSQL driver
